@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Greeting</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+        }
+
+        .hero-card {
+            transition: 0.5s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            animation: rise 5s linear forwards;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(30deg);
+                opacity: 0;
+            }
+        }
+
+        .reveal {
+            display: none;
+        }
+
+        .reveal.show {
+            display: block;
+            animation: reveal 0.8s ease;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-box img {
+            transition: 0.5s ease;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fff7f5] text-[#542b32]">
+
+    <!-- Navigation -->
+
+    <nav class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-2xl font-bold">
+                Bloom & Wishes
+            </h1>
+
+            <div class="hidden md:flex gap-7 text-sm">
+                <a href="#home" class="hover:text-[#a85c68]">Home</a>
+                <a href="#message" class="hover:text-[#a85c68]">Message</a>
+                <a href="#wishes" class="hover:text-[#a85c68]">Wishes</a>
+                <a href="#memories" class="hover:text-[#a85c68]">Memories</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section id="home" class="pt-28 pb-16 px-6">
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Text -->
+
+            <div>
+
+                <p class="uppercase tracking-[5px] text-sm text-[#a85c68] mb-4">
+                    A little celebration
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Today Is A
+                    <span class="text-[#a85c68]">
+                        Beautiful
+                    </span>
+                    Day
+                </h1>
+
+                <p class="text-gray-600 text-lg leading-8 mt-6 max-w-xl">
+                    This little card was created to bring a smile to
+                    someone who deserves beautiful moments,
+                    warm wishes and endless happiness.
+                </p>
+
+                <div class="flex gap-4 mt-8">
+
+                    <a href="#message"
+                       class="bg-[#8f4f5a] text-white px-7 py-3 rounded-full hover:bg-[#703b45] transition">
+                        Read Message
+                    </a>
+
+                    <button onclick="surprise()"
+                            class="border border-[#8f4f5a] text-[#8f4f5a] px-7 py-3 rounded-full hover:bg-[#8f4f5a] hover:text-white transition">
+                        Surprise Me
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image -->
+
+            <div class="image-box rounded-[35px] overflow-hidden shadow-2xl">
+
+                <img
+                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=80"
+                    alt="Beautiful flowers"
+                    class="w-full h-[520px] object-cover"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL CARD -->
+
+    <section id="message" class="py-20 px-6">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="hero-card bg-white rounded-[40px] shadow-xl overflow-hidden">
+
+                <div class="grid md:grid-cols-2">
+
+                    <div class="image-box h-[450px]">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=80"
+                            alt="Flowers"
+                            class="w-full h-full object-cover"
+                        >
+
+                    </div>
+
+
+                    <div class="p-10 md:p-14 flex flex-col justify-center">
+
+                        <span class="text-5xl mb-5">
+                            💌
+                        </span>
+
+                        <p class="uppercase tracking-[4px] text-sm text-[#a85c68]">
+                            Dear Special One
+                        </p>
+
+                        <h2 class="text-4xl font-bold mt-3">
+                            A Message For You
+                        </h2>
+
+                        <div class="w-20 h-[2px] bg-[#d99aa4] my-6"></div>
+
+                        <p class="text-gray-600 leading-8">
+                            Life becomes more beautiful when we
+                            appreciate the people who make ordinary
+                            moments feel special.
+                        </p>
+
+                        <p class="text-gray-600 leading-8 mt-4">
+                            May every new morning bring you hope,
+                            every evening bring you peace and every
+                            day give you another reason to smile.
+                        </p>
+
+                        <button onclick="openMessage()"
+                                class="mt-7 bg-[#8f4f5a] text-white px-7 py-3 rounded-full w-fit hover:bg-[#703b45] transition">
+                            Open Special Note
+                        </button>
+
+                        <div id="specialNote" class="reveal mt-6">
+
+                            <p class="italic text-[#8f4f5a] leading-7">
+                                "You deserve beautiful moments,
+                                genuine happiness and memories
+                                that stay in your heart forever."
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REASONS TO SMILE -->
+
+    <section class="py-20 bg-[#fceceb] px-6">
+
+        <div class="max-w-6xl mx-auto text-center">
+
+            <p class="uppercase tracking-[4px] text-sm text-[#a85c68]">
+                Little Things
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                Reasons To Smile
+            </h2>
+
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                Sometimes happiness can be found in the
+                simplest moments.
+            </p>
+
+
+            <div class="grid md:grid-cols-3 gap-7 mt-12">
+
+                <div class="bg-white p-8 rounded-3xl shadow-md hover:-translate-y-2 transition">
+
+                    <div class="text-4xl mb-5">
+                        🌸
+                    </div>
+
+                    <h3 class="text-xl font-bold">
+                        Beautiful Moments
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-7">
+                        Treasure the small moments that make
+                        ordinary days unforgettable.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white p-8 rounded-3xl shadow-md hover:-translate-y-2 transition">
+
+                    <div class="text-4xl mb-5">
+                        ☀️
+                    </div>
+
+                    <h3 class="text-xl font-bold">
+                        New Beginnings
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-7">
+                        Every sunrise is another opportunity
+                        to create something wonderful.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white p-8 rounded-3xl shadow-md hover:-translate-y-2 transition">
+
+                    <div class="text-4xl mb-5">
+                        ❤️
+                    </div>
+
+                    <h3 class="text-xl font-bold">
+                        Happy Memories
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-7">
+                        Keep the memories that make your heart
+                        smile even on ordinary days.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WISHES -->
+
+    <section id="wishes" class="py-20 px-6">
+
+        <div class="max-w-6xl mx-auto text-center">
+
+            <p class="uppercase tracking-[4px] text-sm text-[#a85c68]">
+                From The Heart
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                My Wishes For You
+            </h2>
+
+
+            <div class="grid md:grid-cols-4 gap-6 mt-12">
+
+                <div class="border border-[#ead1d4] rounded-3xl p-7 hover:bg-white transition">
+
+                    <div class="text-3xl">
+                        ✨
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Happiness
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2">
+                        May your heart always find reasons to smile.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-[#ead1d4] rounded-3xl p-7 hover:bg-white transition">
+
+                    <div class="text-3xl">
+                        🌷
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Peace
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2">
+                        May your days be calm, peaceful and bright.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-[#ead1d4] rounded-3xl p-7 hover:bg-white transition">
+
+                    <div class="text-3xl">
+                        🌟
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Success
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2">
+                        May every dream slowly become reality.
+                    </p>
+
+                </div>
+
+
+                <div class="border border-[#ead1d4] rounded-3xl p-7 hover:bg-white transition">
+
+                    <div class="text-3xl">
+                        💕
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Love
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2">
+                        May you always be surrounded by genuine love.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+
+    <section id="memories" class="py-20 bg-[#fff0ee] px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center">
+
+                <p class="uppercase tracking-[4px] text-sm text-[#a85c68]">
+                    Cherish The Moments
+                </p>
+
+                <h2 class="text-4xl font-bold mt-3">
+                    Beautiful Memories
+                </h2>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-7 mt-12">
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-56 object-cover"
+                        alt="Nature"
+                    >
+
+                    <div class="p-6">
+
+                        <h3 class="text-xl font-bold">
+                            Peaceful Days
+                        </h3>
+
+                        <p class="text-gray-600 mt-2">
+                            The quiet moments that make everything
+                            feel just right.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-56 object-cover"
+                        alt="Beach"
+                    >
+
+                    <div class="p-6">
+
+                        <h3 class="text-xl font-bold">
+                            Endless Adventures
+                        </h3>
+
+                        <p class="text-gray-600 mt-2">
+                            New places, new experiences and memories
+                            waiting to be created.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-56 object-cover"
+                        alt="Happy moment"
+                    >
+
+                    <div class="p-6">
+
+                        <h3 class="text-xl font-bold">
+                            Simple Happiness
+                        </h3>
+
+                        <p class="text-gray-600 mt-2">
+                            Because the smallest moments often become
+                            the best memories.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="py-24 px-6 text-center">
+
+        <div class="max-w-3xl mx-auto">
+
+            <div class="text-6xl floating">
+                💐
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-8">
+                Keep Smiling
+            </h2>
+
+            <p class="text-gray-600 text-lg leading-8 mt-6">
+                No matter where life takes you, may you always
+                carry hope in your heart, kindness in your words
+                and a smile that brightens every room.
+            </p>
+
+            <button onclick="sendLove()"
+                    class="mt-8 bg-[#8f4f5a] text-white px-9 py-4 rounded-full font-semibold hover:bg-[#703b45] transition shadow-lg">
+                Send Some Love ♥
+            </button>
+
+            <p id="loveMessage"
+               class="mt-6 text-[#8f4f5a] font-semibold">
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="bg-[#542b32] text-white py-8 text-center">
+
+        <h3 class="text-xl font-bold">
+            Bloom & Wishes
+        </h3>
+
+        <p class="text-white/70 text-sm mt-2">
+            A little card made to create a little happiness.
+        </p>
+
+        <p class="text-white/50 text-xs mt-5">
+            © 2026 • Made with love
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function openMessage() {
+
+            const note = document.getElementById("specialNote");
+
+            note.classList.toggle("show");
+
+            createHearts(8);
+        }
+
+
+        function surprise() {
+
+            createHearts(20);
+
+            alert("✨ You are wonderful! Never forget that. ❤️");
+        }
+
+
+        function sendLove() {
+
+            const message = document.getElementById("loveMessage");
+
+            message.innerHTML =
+                "Your little bit of love has been sent into the universe! 💕";
+
+            createHearts(15);
+        }
+
+
+        function createHearts(number) {
+
+            for (let i = 0; i < number; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerHTML =
+                    Math.random() > 0.5 ? "♥" : "♡";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.fontSize =
+                    Math.random() * 25 + 15 + "px";
+
+                heart.style.color =
+                    "#b76e79";
+
+                heart.style.animationDuration =
+                    Math.random() * 3 + 3 + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
